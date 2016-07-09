@@ -1,0 +1,12 @@
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\bin\Debug\VoiceControlApplication2.exe.config
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\bin\Debug\VoiceControlApplication2.exe
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\bin\Debug\VoiceControlApplication2.pdb
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\bin\Debug\en-US\VoiceControlApplication2.resources.dll
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.frmVoiceControl.resources
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.Properties.Resources.resources
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.frmVoiceControl.en-US.resources
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.csproj.GenerateResource.Cache
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\en-US\VoiceControlApplication2.resources.dll
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.exe
+C:\Users\Tyler Barton\Desktop\VoiceControlApplication2\VoiceControlApplication2\obj\Debug\VoiceControlApplication2.pdb
