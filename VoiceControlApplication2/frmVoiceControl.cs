@@ -1,6 +1,7 @@
-﻿//This code references Johnny Manson's YouTube video (C# Development Tutorial | Voice Recognition):
-//https://www.youtube.com/watch?v=AB9lfHDOe5U
+﻿//This code references Johnny Manson's YouTube video (C# Development Tutorial | Speech Synthesis):
+//https://www.youtube.com/watch?v=gkTiKMSLOHY
 
+//These are namespaces and not classes (methods?)
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech;
 using System.Speech.Recognition;
-//using System.Speech.Synthesis;
+using System.Speech.Synthesis;
 
 namespace VoiceControlApplication2
 {
@@ -24,11 +25,12 @@ namespace VoiceControlApplication2
         }
 
         SpeechRecognitionEngine speechRecEngine = new SpeechRecognitionEngine();
+        SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Choices voiceCommands = new Choices();
-            voiceCommands.Add(new string[] { "Say hello.", "Print my name."});
+            voiceCommands.Add(new string[] { "Say hello.", "Print my name.", "Speak selected text."});
             GrammarBuilder gramBuilder = new GrammarBuilder();
             gramBuilder.Append(voiceCommands);
             Grammar grammer = new Grammar(gramBuilder);
@@ -45,10 +47,37 @@ namespace VoiceControlApplication2
             switch (e.Result.Text)
             {
                 case "Say hello.":
-                    MessageBox.Show("Hello Tyler.  How are you?");
+
+                    //MessageBox.Show("Hello Tyler.  How are you?");
+                    //builder.StartStyle(new PromptStyle(PromptEmphasis));
+                    //builder.StartStyle(new PromptStyle(PromptRate));
+                    //builder.StartStyle(new PromptStyle(PromptVolume));
+                    //builder.StartSentence();
+
+                    //synthesizer.SpeakAsync("Hello Tyler.  How are you?");
+
+                    PromptBuilder builder = new PromptBuilder();
+
+                    builder.StartSentence();
+                    builder.AppendText("Hello Tyler.");
+                    builder.EndSentence();
+                    //builder.AppendBreak(PromptBreak.Small);
+                    //builder.AppendBreak(PromptBreak.ExtraSmall);
+                    //builder.AppendBreak(new TimeSpan(1)); //TimeSpan is a struct
+                    //builder.AppendBreak(new TimeSpan(0, 0, 0, 0, 50));
+
+
+                    builder.StartSentence();
+                    builder.AppendText("How are you?", PromptEmphasis.Strong);
+                    builder.EndSentence();
+
+                    synthesizer.SpeakAsync(builder);
                     break;
                 case "Print my name.":
                     rtbVoiceLog.Text += "\nTyler";
+                    break;
+                case "Speak selected text.":
+                    synthesizer.SpeakAsync(rtbVoiceLog.SelectedText);
                     break;
             }
         }
