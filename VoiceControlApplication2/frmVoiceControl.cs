@@ -56,22 +56,29 @@ namespace VoiceControlApplication2
 
                     //synthesizer.SpeakAsync("Hello Tyler.  How are you?");
 
-                    PromptBuilder builder = new PromptBuilder();
+                    bool prompted = false;
 
-                    builder.StartSentence();
-                    builder.AppendText("Hello Tyler.");
-                    builder.EndSentence();
-                    //builder.AppendBreak(PromptBreak.Small);
-                    //builder.AppendBreak(PromptBreak.ExtraSmall);
-                    //builder.AppendBreak(new TimeSpan(1)); //TimeSpan is a struct
-                    //builder.AppendBreak(new TimeSpan(0, 0, 0, 0, 50));
+                    while (prompted == false)
+                    {
+                        PromptBuilder builder = new PromptBuilder();
+
+                        builder.StartSentence();
+                        builder.AppendText("Hello Tyler.");
+                        builder.EndSentence();
+                        //builder.AppendBreak(PromptBreak.Small);
+                        //builder.AppendBreak(PromptBreak.ExtraSmall);
+                        //builder.AppendBreak(new TimeSpan(1)); //TimeSpan is a struct
+                        builder.AppendBreak(new TimeSpan(0, 0, 0, 0, 50));
 
 
-                    builder.StartSentence();
-                    builder.AppendText("How are you?", PromptEmphasis.Strong);
-                    builder.EndSentence();
+                        builder.StartSentence();
+                        builder.AppendText("How are you?", PromptEmphasis.Strong);
+                        builder.EndSentence();
 
-                    synthesizer.SpeakAsync(builder);
+                        synthesizer.SpeakAsync(builder);
+                        //synthesizer.SpeakAsync("Hello Tyler.", "How are you?");
+                        prompted = true;
+                    }
                     break;
                 case "Print my name.":
                     rtbVoiceLog.Text += "\nTyler";
